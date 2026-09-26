@@ -74,6 +74,10 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button,inp
 @media(max-width:650px){.perspectives-grid{grid-template-columns:1fr}.perspective-card{padding:28px}}
 
 .service-grid a.service-card{display:block;text-decoration:none;color:inherit}.service-grid a.service-card:hover{transform:translateY(-3px)}
+
+/* Multi-page navigation with service submenus */
+.nav-group{position:relative}.nav-group>summary{list-style:none;cursor:pointer;padding:8px 0}.nav-group>summary::-webkit-details-marker{display:none}.nav-group>summary:after{content:" ▾";font-size:10px;color:var(--gold)}.nav-dropdown{position:absolute;z-index:50;top:100%;left:-18px;min-width:220px;padding:10px 18px;background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 24px #00000014}.nav-dropdown a{display:block;white-space:nowrap;padding:10px 0}.mobile-menu{display:none}.mobile-group>summary{list-style:none;cursor:pointer;padding:12px 0;font-size:16px}.mobile-group>summary::-webkit-details-marker{display:none}.mobile-group>summary:after{content:" +";color:var(--gold)}.mobile-group[open]>summary:after{content:" −"}.mobile-group>div{padding:0 0 8px 18px;border-left:1px solid var(--line)}.mobile-group>div a{font-size:15px;padding:9px 0}
+@media(max-width:1280px){.main-nav{display:none!important}.mobile-menu{display:block!important;position:relative}.mobile-menu>.menu-toggle{display:flex!important;align-items:center;gap:8px;cursor:pointer;list-style:none;color:var(--green);font-size:14px;font-weight:600}.mobile-menu>.menu-toggle::-webkit-details-marker{display:none}.mobile-navigation{position:absolute;z-index:100;top:100%;right:0;width:min(88vw,420px);padding:18px 24px;background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 24px #00000018;max-height:72vh;overflow:auto}.mobile-navigation>a{display:block;padding:12px 0;font-size:16px}}
 </style>
 </head>
 <body>
@@ -85,11 +89,17 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button,inp
 <details class="mobile-menu">
 <summary class="menu-toggle">Menu <span aria-hidden="true">☰</span></summary>
 <nav aria-label="Mobile navigation" class="mobile-navigation">
-<a href="index.html">Home</a><a href="about.html">About Flor</a><a href="buying.html">Residential</a><a href="commercial-properties.html">Commercial</a><a href="insights.html">Insights</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a>
+<a href="index.html">Home</a><a href="about.html">About Flor</a>
+<details class="mobile-group"><summary>Residential</summary><div><a href="buying.html">Buying</a><a href="selling.html">Selling</a><a href="investment.html">Investment</a><a href="pre-construction.html">Pre-Construction</a></div></details>
+<details class="mobile-group"><summary>Commercial</summary><div><a href="commercial-properties.html">Commercial Properties</a><a href="business.html">Business</a></div></details>
+<a href="insights.html">Insights</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a>
 </nav>
 </details>
 <nav aria-label="Primary navigation" class="main-nav" id="main-navigation">
-<a href="index.html">Home</a><a href="about.html">About Flor</a><a href="buying.html">Residential</a><a href="commercial-properties.html">Commercial</a><a href="insights.html">Insights</a><a href="testimonials.html">Testimonials</a><a class="nav-cta" href="contact.html">Contact</a>
+<a href="index.html">Home</a><a href="about.html">About Flor</a>
+<details class="nav-group"><summary>Residential</summary><div class="nav-dropdown"><a href="buying.html">Buying</a><a href="selling.html">Selling</a><a href="investment.html">Investment</a><a href="pre-construction.html">Pre-Construction</a></div></details>
+<details class="nav-group"><summary>Commercial</summary><div class="nav-dropdown"><a href="commercial-properties.html">Commercial Properties</a><a href="business.html">Business</a></div></details>
+<a href="insights.html">Insights</a><a href="testimonials.html">Testimonials</a><a class="nav-cta" href="contact.html">Contact</a>
 </nav>
 </header>
 <main>
